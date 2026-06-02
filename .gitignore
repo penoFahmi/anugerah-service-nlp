@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# NLP Specific (Large data and models)
+data/
+corpus/
+models/
+*.bin
+*.pkl
+*.h5
+*.onnx
+*.pt
+*.pth
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
