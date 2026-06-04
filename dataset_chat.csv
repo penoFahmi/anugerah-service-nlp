@@ -1,1 +1,13 @@
-teks_chat	label_intent
+teks_chat,label_intent
+"oke bang gas kerjain aja gpp","SETUJU"
+"lanjut proses aja mas","SETUJU"
+"oke setuju bg langsung garap","SETUJU"
+"wah mahal bet bang ga jadi deh","BATAL"
+"cancel aja bg kemahalan budget ga nyampe","BATAL"
+"kembalikan aja bg gajadi diservis","BATAL"
+"bang laptop asus ku udah jadi belum","TANYA_STATUS"
+"bg cek status servis nota 001 dong","TANYA_STATUS"
+"kapan slesainya ya mas laptop saya","TANYA_STATUS"
+"kira kira kena biaya berapa bang kalau ganti layar","UMUM_TEKNIS"
+"kalau tambah ram 8gb ddr4 harganya brp bang?","UMUM_TEKNIS"
+"bang buka kah hari ini?","UMUM_TEKNIS"
