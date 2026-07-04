@@ -1,66 +1,70 @@
+import logging
 from fastapi import FastAPI
 from pydantic import BaseModel
 import fasttext
-import pickle
+import joblib
 import re
 import numpy as np
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 
-# Inisialisasi Aplikasi API
-app = FastAPI(title="Anugerah NLP Service")
+# 1. Konfigurasi Logging
+# Mengatur format log agar menampilkan waktu, tingkat pesan (INFO), dan isi pesannya
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
 
-# Muat model ke dalam memori saat server pertama kali menyala
-print("Memuat model FastText dan SVM...")
+# 2. Inisialisasi aplikasi FastAPI
+app = FastAPI(title="NLP Intent Recognition API")
+
+# 3. Muat model yang sudah dilatih (pastikan file ada di folder yang sama)
+logger.info("Memuat model FastText dan SVM...")
 ft_model = fasttext.load_model("fasttext_model.bin")
-with open("svm_model.pkl", "rb") as f:
-    svm_model = pickle.load(f)
-print("Model siap digunakan!")
+svm_model = joblib.load("svm_model.pkl")
+logger.info("Model berhasil dimuat!")
 
-# Skema data yang diterima API (JSON Payload)
-class TextRequest(BaseModel):
+# 4. Siapkan pembersih teks
+factory = StemmerFactory()
+stemmer = factory.create_stemmer()
+
+# 5. Tentukan struktur data yang akan diterima dari Laravel
+class MessageRequest(BaseModel):
     text: str
 
-# Fungsi pembersihan teks (sama dengan yang di Jupyter Notebook)
-def clean_text(text):
+# Fungsi untuk membersihkan teks
+def preprocess_text(text: str):
     text = str(text).lower()
-    text = re.sub(r'【.*?】', '', text)
-    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    text = re.sub(r'[^a-z\s]', '', text)
     text = re.sub(r'\s+', ' ', text).strip()
-    return text
+    return stemmer.stem(text)
 
-# Endpoint utama untuk klasifikasi pesan
-@app.post("/predict")
-def predict_intent(request: TextRequest):
-    cleaned = clean_text(request.text)
+# 6. Buat endpoint untuk menerima data POST
+@app.post("/api/predict-intent")
+def predict_intent(request: MessageRequest):
+    # LOG: Mencatat data yang diterima dari Laravel
+    logger.info(f"[DITERIMA DARI LARAVEL] Teks asli: '{request.text}'")
     
-    # Jika pesan kosong setelah dibersihkan
-    if not cleaned:
-        return {"label": "Tidak Jelas", "confidence": 0.0, "is_fallback_llm": True}
-        
-    # Ubah teks menjadi vektor angka dengan FastText
-    vector = ft_model.get_sentence_vector(cleaned).reshape(1, -1)
+    # Bersihkan teks yang masuk
+    clean_text = preprocess_text(request.text)
     
-    # Prediksi menggunakan SVM dan ambil persentase probabilitasnya
+    # Ubah teks menjadi vektor matematika
+    vector = np.array([ft_model.get_sentence_vector(clean_text)])
+    
+    # Lakukan prediksi kelas dan ambil nilai keyakinannya (probabilitas)
+    prediction = svm_model.predict(vector)[0]
     probabilities = svm_model.predict_proba(vector)[0]
+    max_prob = max(probabilities)
     
-    # Indeks 0 = Batal, Indeks 1 = Setuju (sesuai urutan training)
-    prob_batal = probabilities[0]
-    prob_setuju = probabilities[1]
-    
-    # Tentukan pemenang dan keyakinannya
-    if prob_setuju > prob_batal:
-        confidence = prob_setuju
-        label = "Setuju"
-    else:
-        confidence = prob_batal
-        label = "Batal"
-        
-    # Logika ambang batas: lempar ke LLM jika akurasi NLP di bawah 80% (0.80)
-    is_fallback = True if confidence < 0.80 else False
-    
-    return {
-        "original_text": request.text,
-        "cleaned_text": cleaned,
-        "label": label,
-        "confidence": float(confidence),
-        "is_fallback_llm": is_fallback
+    # Siapkan data yang akan dikembalikan
+    response_data = {
+        "intent": prediction,
+        "confidence": round(float(max_prob), 2),
+        "clean_text": clean_text
     }
+    
+    # LOG: Mencatat data yang akan dilempar kembali ke Laravel
+    logger.info(f"[DIKIRIM KE LARAVEL] Hasil Prediksi: {response_data}")
+    
+    # Kembalikan hasil dalam bentuk JSON
+    return response_data
