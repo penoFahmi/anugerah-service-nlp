@@ -9,8 +9,6 @@ Project ini menyediakan API dan tools untuk memproses bahasa alami, termasuk ana
 ## Fitur
 
 - Pemrosesan teks natural language
-- Analisis sentimen
-- Ekstraksi entitas
 - Tokenisasi dan normalisasi teks
 - Integrasi dengan model NLP modern
 
@@ -18,37 +16,21 @@ Project ini menyediakan API dan tools untuk memproses bahasa alami, termasuk ana
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/penoFahmi/anugerah-service-nlp.git
 
 # Install dependencies
-pip install -r requirements.txt
+
 ```
 
 ## Penggunaan
 
 ```python
-# Contoh penggunaan
-from anugerah_nlp import processor
 
-result = processor.process("Contoh teks yang akan diproses")
-print(result)
-```
 
-## Struktur Folder
-
-```
-anugerah-service-nlp/
-├── src/              # Source code
-├── tests/            # Unit tests
-├── models/           # Pre-trained models
-├── requirements.txt  # Dependencies
-└── README.md         # Dokumentasi
-```
 
 ## Requirements
 
 - Python 3.8+
-- Dependencies tercantum di `requirements.txt`
 
 ## Kontribusi
 
@@ -57,3 +39,5 @@ Silakan buat pull request untuk kontribusi.
 ## Lisensi
 
 Lihat LICENSE untuk detail.
+jalankan di terminal, ini pakai conda.
+uvicorn main:app --reload --port 8001

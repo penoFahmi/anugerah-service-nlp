@@ -42,29 +42,33 @@ def preprocess_text(text: str):
 # 6. Buat endpoint untuk menerima data POST
 @app.post("/api/predict-intent")
 def predict_intent(request: MessageRequest):
-    # LOG: Mencatat data yang diterima dari Laravel
     logger.info(f"[DITERIMA DARI LARAVEL] Teks asli: '{request.text}'")
     
-    # Bersihkan teks yang masuk
+    # HEURISTIC BYPASS: Jika teks pelanggan sangat pendek dan jelas, langsung beri nilai 1.0
+    text_lower = request.text.strip().lower()
+    if text_lower in ['setuju', 'oke', 'ok', 'lanjut', 'kerjakan', 'gass']:
+        response_data = {"intent": "setuju", "confidence": 1.0, "clean_text": text_lower}
+        logger.info(f"[BYPASS HEURISTIC] Hasil Prediksi Mutlak: {response_data}")
+        return response_data
+        
+    if text_lower in ['batal', 'cancel', 'gak jadi', 'ga jadi', 'kemahalan']:
+        response_data = {"intent": "batal", "confidence": 1.0, "clean_text": text_lower}
+        logger.info(f"[BYPASS HEURISTIC] Hasil Prediksi Mutlak: {response_data}")
+        return response_data
+
+    # Jika bukan kata kunci mutlak, jalankan algoritma AI asli (FastText + SVM)
     clean_text = preprocess_text(request.text)
-    
-    # Ubah teks menjadi vektor matematika
     vector = np.array([ft_model.get_sentence_vector(clean_text)])
     
-    # Lakukan prediksi kelas dan ambil nilai keyakinannya (probabilitas)
     prediction = svm_model.predict(vector)[0]
     probabilities = svm_model.predict_proba(vector)[0]
     max_prob = max(probabilities)
     
-    # Siapkan data yang akan dikembalikan
     response_data = {
         "intent": prediction,
         "confidence": round(float(max_prob), 2),
         "clean_text": clean_text
     }
     
-    # LOG: Mencatat data yang akan dilempar kembali ke Laravel
-    logger.info(f"[DIKIRIM KE LARAVEL] Hasil Prediksi: {response_data}")
-    
-    # Kembalikan hasil dalam bentuk JSON
+    logger.info(f"[DIKIRIM KE LARAVEL] Hasil Prediksi AI: {response_data}")
     return response_data
