@@ -1,14 +1,16 @@
 import logging
 from fastapi import FastAPI
 from pydantic import BaseModel
-import fasttext
+from gensim.models import FastText
 import joblib
 import re
 import numpy as np
 from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+import warnings
+
+warnings.filterwarnings('ignore')
 
 # 1. Konfigurasi Logging
-# Mengatur format log agar menampilkan waktu, tingkat pesan (INFO), dan isi pesannya
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
@@ -16,13 +18,16 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # 2. Inisialisasi aplikasi FastAPI
-app = FastAPI(title="NLP Intent Recognition API")
+app = FastAPI(title="NLP Intent Recognition API (Gensim FastText + SVM)")
 
 # 3. Muat model yang sudah dilatih (pastikan file ada di folder yang sama)
 logger.info("Memuat model FastText dan SVM...")
-ft_model = fasttext.load_model("fasttext_model.bin")
-svm_model = joblib.load("svm_model.pkl")
-logger.info("Model berhasil dimuat!")
+try:
+    ft_model = FastText.load("fasttext_model.gensim")
+    svm_model = joblib.load("svm_model.joblib")
+    logger.info("Model berhasil dimuat!")
+except Exception as e:
+    logger.error(f"Gagal memuat model: {e}")
 
 # 4. Siapkan pembersih teks
 factory = StemmerFactory()
@@ -39,33 +44,31 @@ def preprocess_text(text: str):
     text = re.sub(r'\s+', ' ', text).strip()
     return stemmer.stem(text)
 
+# Fungsi ekstrak fitur kalimat dari Gensim FastText
+def get_sentence_vector(text: str, model):
+    words = text.split()
+    vectors = [model.wv[w] for w in words if w in model.wv]
+    if len(vectors) == 0:
+        return np.zeros(model.vector_size)
+    return np.mean(vectors, axis=0)
+
 # 6. Buat endpoint untuk menerima data POST
 @app.post("/api/predict-intent")
 def predict_intent(request: MessageRequest):
     logger.info(f"[DITERIMA DARI LARAVEL] Teks asli: '{request.text}'")
     
-    # HEURISTIC BYPASS: Jika teks pelanggan sangat pendek dan jelas, langsung beri nilai 1.0
-    text_lower = request.text.strip().lower()
-    if text_lower in ['setuju', 'oke', 'ok', 'lanjut', 'kerjakan', 'gass']:
-        response_data = {"intent": "setuju", "confidence": 1.0, "clean_text": text_lower}
-        logger.info(f"[BYPASS HEURISTIC] Hasil Prediksi Mutlak: {response_data}")
-        return response_data
-        
-    if text_lower in ['batal', 'cancel', 'gak jadi', 'ga jadi', 'kemahalan']:
-        response_data = {"intent": "batal", "confidence": 1.0, "clean_text": text_lower}
-        logger.info(f"[BYPASS HEURISTIC] Hasil Prediksi Mutlak: {response_data}")
-        return response_data
 
-    # Jika bukan kata kunci mutlak, jalankan algoritma AI asli (FastText + SVM)
+
+    # Proses AI (FastText + SVM)
     clean_text = preprocess_text(request.text)
-    vector = np.array([ft_model.get_sentence_vector(clean_text)])
+    vector = get_sentence_vector(clean_text, ft_model).reshape(1, -1)
     
     prediction = svm_model.predict(vector)[0]
     probabilities = svm_model.predict_proba(vector)[0]
     max_prob = max(probabilities)
     
     response_data = {
-        "intent": prediction,
+        "intent": str(prediction),
         "confidence": round(float(max_prob), 2),
         "clean_text": clean_text
     }
