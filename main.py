@@ -1,77 +1,90 @@
-import logging
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from gensim.models import FastText
-import joblib
+import fasttext
+import pickle
+import os
 import re
 import numpy as np
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-import warnings
 
-warnings.filterwarnings('ignore')
+app = FastAPI(title="Anugerah Service NLP", description="Intent Classification menggunakan FastText + SVM")
 
-# 1. Konfigurasi Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger(__name__)
+# Global variables for models
+ft_model = None
+svm_clf = None
 
-# 2. Inisialisasi aplikasi FastAPI
-app = FastAPI(title="NLP Intent Recognition API (Gensim FastText + SVM)")
-
-# 3. Muat model yang sudah dilatih (pastikan file ada di folder yang sama)
-logger.info("Memuat model FastText dan SVM...")
-try:
-    ft_model = FastText.load("fasttext_model.gensim")
-    svm_model = joblib.load("svm_model.joblib")
-    logger.info("Model berhasil dimuat!")
-except Exception as e:
-    logger.error(f"Gagal memuat model: {e}")
-
-# 4. Siapkan pembersih teks
-factory = StemmerFactory()
-stemmer = factory.create_stemmer()
-
-# 5. Tentukan struktur data yang akan diterima dari Laravel
-class MessageRequest(BaseModel):
+class IntentRequest(BaseModel):
     text: str
 
-# Fungsi untuk membersihkan teks
-def preprocess_text(text: str):
-    text = str(text).lower()
-    text = re.sub(r'[^a-z\s]', '', text)
-    text = re.sub(r'\s+', ' ', text).strip()
-    return stemmer.stem(text)
+def clean_text(text):
+    if not isinstance(text, str):
+        return ""
+    text = text.lower()
+    text = re.sub(r'[^\w\s]', '', text)
+    return text.strip()
 
-# Fungsi ekstrak fitur kalimat dari Gensim FastText
-def get_sentence_vector(text: str, model):
+def get_sentence_vector(text, model):
     words = text.split()
-    vectors = [model.wv[w] for w in words if w in model.wv]
-    if len(vectors) == 0:
-        return np.zeros(model.vector_size)
-    return np.mean(vectors, axis=0)
+    if not words:
+        return np.zeros(model.get_dimension())
+    
+    word_vectors = [model.get_word_vector(w) for w in words]
+    return np.mean(word_vectors, axis=0)
 
-# 6. Buat endpoint untuk menerima data POST
+@app.on_event("startup")
+async def startup_event():
+    global ft_model, svm_clf
+    print("Memulai server FastAPI...")
+    
+    # 1. Load SVM Model
+    if os.path.exists('svm_model.pkl'):
+        print("Memuat SVM Model...")
+        with open('svm_model.pkl', 'rb') as f:
+            svm_clf = pickle.load(f)
+    else:
+        print("WARNING: svm_model.pkl tidak ditemukan. Model prediksi belum tersedia.")
+        
+    # 2. Load FastText (cc.id.300.bin)
+    if os.path.exists('cc.id.300.bin'):
+        print("Memuat FastText cc.id.300.bin (Tunggu beberapa detik)...")
+        ft_model = fasttext.load_model('cc.id.300.bin')
+        print("FastText berhasil dimuat!")
+    else:
+        print("WARNING: cc.id.300.bin tidak ditemukan!")
+
 @app.post("/api/predict-intent")
-def predict_intent(request: MessageRequest):
-    logger.info(f"[DITERIMA DARI LARAVEL] Teks asli: '{request.text}'")
+async def predict_intent(request: IntentRequest):
+    if ft_model is None or svm_clf is None:
+        raise HTTPException(status_code=500, detail="Model belum dimuat di server. Jalankan 2_train_model.py terlebih dahulu.")
+        
+    original_text = request.text
+    cleaned_text = clean_text(original_text)
     
-
-
-    # Proses AI (FastText + SVM)
-    clean_text = preprocess_text(request.text)
-    vector = get_sentence_vector(clean_text, ft_model).reshape(1, -1)
+    if not cleaned_text:
+        return {"intent": "umum_teknis", "confidence": 0.0, "original_text": original_text}
+        
+    # Ekstrak Vektor
+    vector = get_sentence_vector(cleaned_text, ft_model)
     
-    prediction = svm_model.predict(vector)[0]
-    probabilities = svm_model.predict_proba(vector)[0]
-    max_prob = max(probabilities)
+    # Prediksi menggunakan SVM
+    # svm_clf.predict_proba mengembalikan array 2D dengan probabilitas tiap kelas
+    # svm_clf.classes_ berisi urutan nama intent
+    probabilities = svm_clf.predict_proba([vector])[0]
     
-    response_data = {
-        "intent": str(prediction),
-        "confidence": round(float(max_prob), 2),
-        "clean_text": clean_text
+    # Cari nilai probability tertinggi
+    max_prob_index = np.argmax(probabilities)
+    predicted_intent = svm_clf.classes_[max_prob_index]
+    confidence_score = float(probabilities[max_prob_index])
+    
+    # === Log ke Terminal ===
+    print(f"--> [Prediksi] Teks: '{original_text}' | Niat: '{predicted_intent}' | Skor: {confidence_score:.2f}")
+    
+    return {
+        "intent": predicted_intent,
+        "confidence": confidence_score,
+        "original_text": original_text,
+        "cleaned_text": cleaned_text
     }
-    
-    logger.info(f"[DIKIRIM KE LARAVEL] Hasil Prediksi AI: {response_data}")
-    return response_data
+
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Anugerah NLP API is running."}

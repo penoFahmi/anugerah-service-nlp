@@ -32,3 +32,11 @@ models/
 
 # Environment variables
 .env
+cc.id.300.bin
+cc.id.300.bin.gz
+
+upgrade_nb2.py
+update_notebook.py
+generate_nb1.py
+generate_nb2.py
+fix_notebook2.py

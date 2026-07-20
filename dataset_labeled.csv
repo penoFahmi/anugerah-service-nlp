@@ -1,0 +1,508 @@
+text,intent,source
+Kira-kira servisnya butuh waktu berapa lama?,tanya_estimasi_waktu,synthetic
+Ok otw,sapaan,real
+"batal servis komputer, mohon maaf",batal,synthetic
+nanti sore saya ambil laptop nya,tanya_status,real
+"gak jadi servis komputer, udah gak ada waktu",batal,synthetic
+"Toko servicenya, apa punya layanan konsultasi gratis, nih?",info_toko,synthetic
+Jam brpa tutup tokonya bang,info_toko,real
+Iya lah kak,sapaan,real
+"Bang, saya mau klaim garansi, tapi saya lupa nota pembelian",klaim_garansi,synthetic
+Udah yaa bg,sapaan,real
+Oke bg info jak nanti ye,sapaan,real
+"Servis komputer di tempat ini, apakah lebih mahal dari tempat lain?",nego_harga,synthetic
+"Admin, saya mau tanya tentang harga servis",butuh_admin,synthetic
+sip,setuju,real
+sihap,sapaan,real
+"Harganya servis komputer di sini berapa, bro?",info_toko,synthetic
+"Bang, kapan komputer saya selesai diservis?",tanya_estimasi_waktu,synthetic
+"Untuk perbaikannya, touchpad ya Bg?? Atau ada yg perlu diperbaiki lagi?",konsultasi_kerusakan,real
+Pagi bg,sapaan,real
+"Saya ingin membeli antivirus, apa yang bagus?",umum_teknis,synthetic
+"Saya mau servis komputer, tapi budget saya tidak lebih dari 500rb, bisa bantu?",nego_harga,synthetic
+harga servisnya tidak sesuai dengan hasilnya,komplain,synthetic
+"Saya ingin membeli komputer gaming, apa spesifikasi yang bagus?",umum_teknis,synthetic
+Okeee,setuju,real
+Ok lh bang.yg pnting aman,setuju,real
+Iya bng siap,setuju,real
+"Admin, saya ingin tahu tentang cara servis komputer",butuh_admin,synthetic
+"Komputer saya tidak bisa terhubung ke internet, apa penyebabnya?",umum_teknis,synthetic
+keyboard ny masih nd bise ke bang,konsultasi_kerusakan,real
+"Okee bang, bentar lg ambil",sapaan,real
+Kira-kira selesai servisnya kapan?,tanya_estimasi_waktu,synthetic
+Bang,sapaan,real
+yg proposal penelitian lada jak,umum_teknis,real
+Tadi gak keburu jdi krja dulu,sapaan,real
+"Laptopnya rusak karena kesalahan pabrik, bisa klaim garansi?",klaim_garansi,synthetic
+Oh oke boleh bg,setuju,real
+"laptopnya mau dipake, cancel aja",batal,synthetic
+Kalau pake windows 11 masih nda die ye bang,umum_teknis,real
+"Bang, kapan selesainya servis laptop saya?",tanya_estimasi_waktu,synthetic
+servisnya murah tapi hasilnya kurang memuaskan,komplain,synthetic
+Insyaallah malm sy ambil nya bang,setuju,real
+Udah berapa lama sih proses servis komputer saya?,tanya_estimasi_waktu,synthetic
+gmn ya,sapaan,real
+"Saya punya nota pembelian, bisa klaim garansi kan?",klaim_garansi,synthetic
+Bang bisa minta bukti pembayaran Ndak orang rumah mau Liat tkut sye dibilang bohong pla 😅,tanya_status,real
+oke bang boleh bang ganti keyboard nya juga,konsultasi_kerusakan,real
+"Saya ingin klaim garansi laptop saya yang rusak, tolong bantu",klaim_garansi,synthetic
+HHD internalnya bisa di casingin dak,konsultasi_kerusakan,real
+Bg waktu itu kan reset leptop kate abg masih bise pulihkan,konsultasi_kerusakan,real
+Butuh info lebih lanjut tentang servis komputer,butuh_admin,synthetic
+"Bisa kasih harga yang lebih murah nggak, bang?",nego_harga,synthetic
+Udah berapa lama sih servis komputer saya?,tanya_estimasi_waktu,synthetic
+"Servisnya udah jadi atau belum, bro?",tanya_status,synthetic
+oke baik bg,sapaan,real
+"Nah itu, saya pun bingung bang kenapa malah keyboard nya jadi bermasalah, padahal sebelumnya nda pernah ada masalah",konsultasi_kerusakan,real
+Butuh rekomendasi dari admin tentang komponen komputer,butuh_admin,synthetic
+"Toko servicenya ada di mana, bang?",info_toko,synthetic
+"Komputer saya tidak bisa membaca CD, apa penyebabnya?",umum_teknis,synthetic
+"Komputer saya terkena virus, bisa dibantu untuk menghilangkannya?",konsultasi_kerusakan,synthetic
+"maaf bg, saya batal servis",batal,synthetic
+"Komputer bisa diperbaiki dalam beberapa hari, bang?",info_toko,synthetic
+Waalaikumsalam oke bang,sapaan,real
+Kapan selesainya servis laptop saya?,tanya_estimasi_waktu,synthetic
+"Saya setuju aja, asal laptopnya bisa normal lagi",setuju,synthetic
+laptop aku masih aja belum selesai,komplain,synthetic
+Okey bang,sapaan,real
+Butuh bantuan admin untuk kasus komputer saya,butuh_admin,synthetic
+bg bisa qris/tf nd?,info_toko,real
+"Bang, kapan komputer saya selesai servis?",tanya_estimasi_waktu,synthetic
+"Servis komputer di tempat lain lebih murah, bisa turun harganya?",nego_harga,synthetic
+"Komputer saya terlalu panas, bagaimana cara mengatasinya?",umum_teknis,synthetic
+"ini saya yang kemarin malam datang yang masalah kursor delay, emng kalau habis di update untuk tingkat kecerahan layar hilang ya kak",konsultasi_kerusakan,real
+okee makasihhh banggg,sapaan,real
+"Waalaikumsalam, baik Bang, terimakasih Bang",sapaan,real
+Apa yang harus saya lakukan jika komputer saya mengalami error?,umum_teknis,synthetic
+"Mau tanya, harga servis laptop di sini sudah termasuk biaya lain-lain atau belum?",nego_harga,synthetic
+Berapa harga servis komputer disini bang?,nego_harga,synthetic
+Iya kak lanjutkan 🙏🏻,setuju,real
+Untk leptop Advan cuma itu aja ke bg perbaikannya?,konsultasi_kerusakan,real
+"Bang, kapan laptop saya selesai diservis?",tanya_estimasi_waktu,synthetic
+Saya mau tanya tentang klaim garansi laptop saya,klaim_garansi,synthetic
+Apa yang harus saya lakukan jika komputer saya mengalami bluescreen?,umum_teknis,synthetic
+bisa tukar tambah ga ya bg😁,nego_harga,real
+"Saya ingin membeli komputer baru, apa spesifikasi yang bagus?",umum_teknis,synthetic
+"bg, aku tidak puas dengan pelayanan di tempat servis",komplain,synthetic
+kalau pakai mouse bisa,umum_teknis,real
+"Bang, saya mau klaim garansi laptop saya, tapi saya tidak punya waktu",klaim_garansi,synthetic
+"Komputer saya sering restart sendiri, apa solusinya?",konsultasi_kerusakan,synthetic
+"okei kak, besok kalo udh selesai.
+Kabarin aja yaa kak, Terima Kasih",tanya_status,real
+"Bang, kalau servis printer, berapa lama ya prosesnya dan berapa biayanya?",nego_harga,synthetic
+"Bang, saya mau tanya tentang prosedur klaim garansi",klaim_garansi,synthetic
+"Anda belum memiliki aplikasi myIM3 untuk mengaktifkan perlindungan Anti Spam dan Scam dari SATSPAM+. Harap mendownload aplikasi myIM3 untuk mengaktifkan layanan, tanpa biaya apapun.",info_toko,real
+Gitu ya bang jadi bang lep top nya ndk bisa di betul kan??,konsultasi_kerusakan,real
+Kira-kira berapa hari servisnya selesai?,tanya_estimasi_waktu,synthetic
+Iya.,setuju,real
+"Bang, ada diskon nggak kalau servis komputer sekarang?",nego_harga,synthetic
+"Admin, saya mau konsultasi tentang masalah komputer saya",butuh_admin,synthetic
+Ganti ssd 128 gak kurang lagi.,konsultasi_kerusakan,real
+"Saya beli laptop di sini 6 bulan lalu, sekarang mau klaim garansi",klaim_garansi,synthetic
+"Saya punya nota pembelian, bisa klaim garansi laptop saya?",klaim_garansi,synthetic
+gausah kalik ya cmn 1 doang,batal,real
+"servis komputer batal, besok aja",batal,synthetic
+"komputer aku masih rusak, padahal udah beberapa hari diservis",komplain,synthetic
+"Komputer saya membuat suara aneh, apa penyebabnya?",umum_teknis,synthetic
+"gak jadi servis, mohon dikembalikan uangnya",batal,synthetic
+Kira-kira butuh waktu berapa lama servisnya?,tanya_estimasi_waktu,synthetic
+"Komputer saya, kira-kira berapa biaya servisnya, nih?",info_toko,synthetic
+"Admin, saya mau konsultasi tentang keamanan komputer",butuh_admin,synthetic
+permisi kak,sapaan,real
+"gak jadi servis, udah gak ada waktu",batal,synthetic
+Bg ada garansinya nda ya kalau udah ganti frame,klaim_garansi,real
+Berapa lama sih proses servisnya?,tanya_estimasi_waktu,synthetic
+"Oke bg terimakasih
+Nnti saya ambl laptop nya",setuju,real
+Gimana Progress labtob sekarang bang??,tanya_status,real
+"Bang, servicenya udah selesai atau belum?",tanya_status,synthetic
+"Bang, kalau servis laptop, bisa dapat diskon nggak?",nego_harga,synthetic
+"servisnya lama banget bg, udah hampir seminggu",komplain,synthetic
+"Komputer saya lambat, bagaimana cara memperbaikinya?",umum_teknis,synthetic
+"gak jadi servis komputer, udah ada yang benerin",batal,synthetic
+komplain tentang kehilangan data atau barang,komplain,synthetic
+"Di sini, bisa servis komputer merk apa aja, nih?",info_toko,synthetic
+"Komputer bisa diperbaiki di sini, kan?",info_toko,synthetic
+"Saya punya laptop yang rusak, bisa klaim garansi di sini?",klaim_garansi,synthetic
+Apk Nya terapus semua nda bang,komplain,real
+Saya ingin tahu cara klaim garansi laptop di tempat servis ini,klaim_garansi,synthetic
+Ok bng,sapaan,real
+Kira2 tutup ny jam berapa ya bang?,info_toko,real
+Jadinya berapa bang ..klau nambah banyak ndk tu bang .,nego_harga,real
+"Bang, saya mau klaim garansi laptop saya, tapi saya tidak tahu berapa lama prosesnya",klaim_garansi,synthetic
+"Saya cari tempat servis komputer yang harganya kompetitif, bisa bantu?",nego_harga,synthetic
+"Bang, toko servicenya buka jam berapa, nih?",info_toko,synthetic
+Okke sore ya,sapaan,real
+Servis laptop di sini berapa lama ya dan berapa harganya?,nego_harga,synthetic
+Owh iya bang,sapaan,real
+Boleh bg. Nanti klo sudah selesai infokn saja,sapaan,real
+Siang bang.,sapaan,real
+bg saya tf byr ny,setuju,real
+"Minat servis komputer di sini, bro?",info_toko,synthetic
+"Komputer saya terkena virus, bisa dibersihkan tidak?",umum_teknis,synthetic
+Oke... Ditunggu info lanjutan. Setelah cek ulang. TRIms 🙏,setuju,real
+kalau masalah tambah ram nya itu berapa ya bang biaya nya ?,nego_harga,real
+"Komputer saya tiba-tiba mati sendiri, bang",umum_teknis,synthetic
+Udah kah min,sapaan,real
+"servis komputer batal, nanti aku kabarin lagi",batal,synthetic
+"Saya ingin membeli komponen komputer, apa yang harus saya beli?",umum_teknis,synthetic
+okey bang terimakasih,setuju,real
+makasi ya bang,sapaan,real
+tolong sampe bisa nyaman aman sentosa yaa kak🙏🏻,sapaan,real
+Yang harga 600 RB tadi,nego_harga,real
+Knp bang,sapaan,real
+Servisnya butuh berapa lama sih?,tanya_estimasi_waktu,synthetic
+"Admin, saya mau konsultasi tentang komputer",butuh_admin,synthetic
+malam kak,sapaan,real
+"Servis laptopnya udah jadi belum, bang?",tanya_status,synthetic
+"Admin, saya mau tanya tentang proses instalasi",butuh_admin,synthetic
+Ohhh iyaa lahh bang,sapaan,real
+smlm masih bisa,konsultasi_kerusakan,real
+"Bang, laptop saya rusak parah, apa bisa klaim garansi?",klaim_garansi,synthetic
+"Mau tanya, harga servis komputer di sini sudah termasuk biaya spare part atau belum?",nego_harga,synthetic
+untuk layarnye aman nd bg? abang udh cobe hidupin belum?,konsultasi_kerusakan,real
+"bg, laptop aku masih bermasalah, walaupun udah diservis",komplain,synthetic
+Mau bang,sapaan,real
+laptop maksud saye,sapaan,real
+iyaa bang konfirmasi lagi yaa,setuju,real
+Servisnya membutuhkan waktu berapa lama?,tanya_estimasi_waktu,synthetic
+Terus itu gimna ya bang,sapaan,real
+"waalaikumsalam, okee bang nanti saya ambil yaa",setuju,real
+tiba-tiba jak bang,sapaan,real
+Kapan saya bisa ambil laptop yang selesai servis?,tanya_estimasi_waktu,synthetic
+oke bg nanti diambil,setuju,real
+sama harganya berapa bang?,nego_harga,real
+ganti katanya bg,konsultasi_kerusakan,real
+Iye bg😭,sapaan,real
+Kalau bisa Senin udh bisa diambil ya bang,tanya_status,real
+"Admin, saya mau konsultasi tentang upgrade komputer",butuh_admin,synthetic
+"Admin, saya ingin tahu tentang cara menghindari virus komputer",butuh_admin,synthetic
+"bg, laptop aku jadi rusak parah setelah diservis",komplain,synthetic
+maaf bg batal aja,batal,synthetic
+"mau batal servis, udah gak ada waktu",batal,synthetic
+Udah selesai belum servis laptop saya?,tanya_estimasi_waktu,synthetic
+sudah bnv,sapaan,real
+"Admin, saya mau tanya tentang biaya servis",butuh_admin,synthetic
+bang laptop saya belum kah,tanya_status,real
+"Setuju, saya ambil sendiri nanti jika sudah selesai",setuju,synthetic
+nnti sy ambil laptop ny y,tanya_status,real
+"Admin, saya ingin tahu tentang biaya servis laptop",butuh_admin,synthetic
+"Saya punya nota pembelian, bisa klaim garansi laptop saya?",klaim_garansi,synthetic
+"Laptopnya rusak karena kerusakan komponen, bisa klaim garansi?",klaim_garansi,synthetic
+jadi gmn bg udh di periksa kah laptopnya?,tanya_status,real
+Kapan selesainya servis laptop saya?,tanya_estimasi_waktu,synthetic
+"ooh oke"" kak perbaiki saja ya disitu nanti kl udh selesai kabarin",setuju,real
+Oke kak info jak,sapaan,real
+Pagi. Apa sdh selesai.,tanya_status,real
+Butuh saran dari admin tentang masalah komputer,butuh_admin,synthetic
+"Kapan saya bisa ambil laptopnya, bang?",tanya_status,synthetic
+jangan bang,sapaan,real
+"Saya ingin upgrade kartu grafis komputer, apa yang harus saya lakukan?",umum_teknis,synthetic
+jambrp tutup toko?,info_toko,real
+biaya servisnya terlalu tinggi bg,komplain,synthetic
+"oke bg, bentar ya",sapaan,real
+"batal servis, udah gak ada waktu",batal,synthetic
+siang kak jadi gmn kak laptopnya?,tanya_status,real
+laptop aku jadi rusak lebih parah setelah diservis,komplain,synthetic
+"servisnya batal dulu ya, besok aja",batal,synthetic
+"gak jadi servis, udah ada yang benerin",batal,synthetic
+dimana lah tu ye bang,sapaan,real
+"laptop ku belum selesai, apa lagi yang kurang",komplain,synthetic
+"laptop aku tidak bisa digunakan, walaupun udah diservis",komplain,synthetic
+"Mau tanya, berapa biaya servis laptop kalau pakai layanan disini?",nego_harga,synthetic
+Butuh help dari admin untuk masalah komputer,butuh_admin,synthetic
+"Bang, laptopnya udah selesai servisnya?",tanya_status,synthetic
+"Saya beli laptop di sini beberapa bulan lalu, sekarang mau klaim garansi",klaim_garansi,synthetic
+"Bang, kalau servis CPU, berapa biayanya ya?",nego_harga,synthetic
+"maaf bg, saya batal servis komputernya",batal,synthetic
+Butuh bantuan dari admin untuk mengatasi masalah komputer saya,butuh_admin,synthetic
+Berapa hari lagi selesai servisnya?,tanya_estimasi_waktu,synthetic
+Skripsi sih bg,sapaan,real
+Dan masih bisa di pakai sebagai external harddisk kan,umum_teknis,real
+Jadi itu skrg bisa hidup ka bang masih?,tanya_status,real
+Kira-kira servisnya selesai kapan?,tanya_estimasi_waktu,synthetic
+"servis komputer batal, mohon maaf",batal,synthetic
+komplain tentang biaya servis yang terlalu mahal,komplain,synthetic
+"Saya beli laptop di sini beberapa bulan lalu, sekarang rusak",klaim_garansi,synthetic
+Ok siap,setuju,real
+Bise tolong nd bang,sapaan,real
+Kira-kira berapa hari servis komputer saya?,tanya_estimasi_waktu,synthetic
+"Saya ingin konsultasi tentang kerusakan komputer saya, bisa kan?",konsultasi_kerusakan,synthetic
+engsel laptop kmrn tu yg kata abgnya agak goyang gmn tu kak?,konsultasi_kerusakan,real
+"Toko servicenya punya ahli yang profesional, bro?",info_toko,synthetic
+Butuh admin yang bisa membantu saya sekarang juga,butuh_admin,synthetic
+"Udah beres atau belum, bang, servicenya?",tanya_status,synthetic
+"siang kak, mau tanya ganti baterai laptop dell inspiron 5405 bs ga ya",konsultasi_kerusakan,real
+Oke bang lanjut perbaiki,setuju,real
+mode malam nya juga gabisa di aktifin,konsultasi_kerusakan,real
+"Udah selesai atau belum, laptopnya?",tanya_status,synthetic
+"selamat malam juga bang, tadi saya udah kasih tau orang tua untuk biayanya. Kata bapak mama saya servicenya ditunda dulu jadi besok siang saya ambil laptopnya di toko",batal,real
+"Harganya untuk servis komputer, apa worth it, bang?",info_toko,synthetic
+Baik bg,sapaan,real
+"Apa toko servicenya buka setiap hari, bro?",info_toko,synthetic
+mlm ttp jam 9 juga ya,tanya_status,real
+"Baik terimakasih infonya, saya ambil besok pagi saja",setuju,real
+Besok siang ya bang saya ambil nda pape ke?,tanya_status,real
+"Apa perbedaan antara SSD dan HDD, bang?",umum_teknis,synthetic
+Ndk tau juga si bg,sapaan,real
+Kira-kira selesai servisnya kapan?,tanya_estimasi_waktu,synthetic
+"Berapa lama lagi laptopnya selesai, bang?",tanya_status,synthetic
+"Admin, saya mau tanya tentang garansi servis",butuh_admin,synthetic
+"Total semua segitu ya, Boleh. Terimakasih",setuju,real
+"laptop aku masih bermasalah, bg",komplain,synthetic
+"Apa perbedaan antara komputer desktop dan laptop, bang?",umum_teknis,synthetic
+Harga servis printer di sini berapa ya bang?,nego_harga,synthetic
+Oky makasih bang ya,sapaan,real
+besok jak kak,sapaan,real
+iyaa boleh bang,setuju,real
+bg kirim no rek,info_toko,real
+"Toko servicenya punya website atau medsos, bro?",info_toko,synthetic
+"Berapa lama lagi servicenya, bang?",tanya_status,synthetic
+okey bang maaf ya bang,sapaan,real
+"pelayanan di tempat servisnya tidak baik, bg",komplain,synthetic
+"laptop aku cuma dibersihin aja, kok harganya selangit",komplain,synthetic
+maaf kak kepencet,sapaan,real
+Butuh admin yang bisa membantu saya secara online,butuh_admin,synthetic
+Bisa dicek gak.,umum_teknis,real
+"Yg abg blg kmren kalau lptop sy bnyak karatanny, gmn tu bng ?
+Aman k kalo udh ganti mesinnya?",konsultasi_kerusakan,real
+"bang, saya batal servis",batal,synthetic
+"Saya mau servis CPU, tapi budget saya terbatas, bisa bantu?",nego_harga,synthetic
+Bang ko labtob nya ga hidup??,konsultasi_kerusakan,real
+Butuh admin buat tanya tentang servis komputer,butuh_admin,synthetic
+Besok bukak jam brpe bang,info_toko,real
+Okok siap bg,setuju,real
+"Gak papa bang, saya setuju dengan waktu perbaikan 3 hari",setuju,synthetic
+Harganya bisa nego nggak nih?,nego_harga,synthetic
+"bg, aku kecewa dengan pelayanan di tempat servis",komplain,synthetic
+"komputer aku masih error, padahal udah diservis",komplain,synthetic
+"Servis komputer di sini, apa bisa cepet selesai?",info_toko,synthetic
+"bg, laptop aku masih rusak, apa salahnya",komplain,synthetic
+"Bang, servicenya udah beres belum?",tanya_status,synthetic
+"Saya tidak tahu cara klaim garansi, tolong bantu",klaim_garansi,synthetic
+"2013
+maaf baru aktif bang 🙏",sapaan,real
+pelayanan di tempat servisnya kurang baik bg,komplain,synthetic
+"servis komputer batal, mohon maaf",batal,synthetic
+"Komputer saya, bisa diperbaiki atau harus ganti, bang?",info_toko,synthetic
+"laptopnya udah gak bermasalah, batal servis",batal,synthetic
+bercak bercak nye nd bisa hilang ke bang,konsultasi_kerusakan,real
+"Toko servicenya terima servis komputer, apa harus daftar dulu, bang?",info_toko,synthetic
+Butuh admin yang bisa membantu saya dengan cepat,butuh_admin,synthetic
+Laptopnya masih dalam perbaikan atau udah jadi?,tanya_status,synthetic
+Butuh bantuan dari admin untuk mengatasi masalah jaringan,butuh_admin,synthetic
+laptop aku dibersihin aja kok harganya mahal,komplain,synthetic
+"Admin, saya ingin servis komputer saya",butuh_admin,synthetic
+Saya ingin tahu berapa biaya servis komputer di tempat bapak?,umum_teknis,synthetic
+Butuh bantuan dari admin untuk menginstal software,butuh_admin,synthetic
+"Saya ingin tahu penyebab komputer saya yang sering lambat, bisa konsultasi?",konsultasi_kerusakan,synthetic
+Sudah bisa bang,sapaan,real
+Ok kpn jadinya,tanya_status,real
+Berapa lama waktu servis komputer saya?,tanya_estimasi_waktu,synthetic
+"Bang, saya mau klaim garansi laptop saya yang rusak parah",klaim_garansi,synthetic
+"Saya beli laptop di sini beberapa minggu lalu, sekarang rusak",klaim_garansi,synthetic
+Apa yang harus saya lakukan jika komputer saya terkena malware?,umum_teknis,synthetic
+"Admin, saya ingin tahu tentang proses servis",butuh_admin,synthetic
+"gak jadi servis, mohon dikembalikan uangnya",batal,synthetic
+"komputer aku jadi rusak, setelah diservis di tempat kamu",komplain,synthetic
+ok sya kasi tau orng nya dlu ya,setuju,real
+Iya kah kak gimana persyaratannya,konsultasi_kerusakan,real
+malam masih buka gak,info_toko,real
+"Saya mau servis komputer, tapi harganya kayaknya terlalu mahal, bisa nego?",nego_harga,synthetic
+"bang, saya mau batal servis komputernya",batal,synthetic
+"di Sini bisa Jual Laptop Seken,,",info_toko,real
+Besok bararti bisa udah saya ambil bang?,tanya_status,real
+Apa yang harus saya lakukan jika komputer saya terkena trojan?,umum_teknis,synthetic
+"laptopnya mau dipake, jadi gak jadi servis",batal,synthetic
+"Kalo servis komputer, garansinya berapa lama, nih?",info_toko,synthetic
+"Laptopnya masih dalam masa garansi, bisa diperbaiki gratis?",klaim_garansi,synthetic
+Pas abis dipakai kak,konsultasi_kerusakan,real
+"bg, kok harganya mahal banget sih",komplain,synthetic
+"Apa bisa servis komputer di sini, hari Minggu?",info_toko,synthetic
+jauh bgt kak kalau bolak balik😭,komplain,real
+Butuh saran dari admin tentang memilih komponen,butuh_admin,synthetic
+"Laptopnya rusak karena kerusakan komponen, bisa klaim garansi?",klaim_garansi,synthetic
+Data nya ilang ga klo instal ulang?,umum_teknis,real
+"Admin, saya ingin servis komputer dengan cepat",butuh_admin,synthetic
+"🔄 *Pesan pengingat agar nomormu aman*
+
+Pastikan pulsa kamu selalu cukup untuk tetap menikmati koneksi IM3. Informasi dan layanan isi ulang pulsa dapat diakses langsung lewat IM3 WhatsApp.
+
+Klik *Isi Pulsa* untuk melanjutkan.",info_toko,real
+Udah selesai belum servis komputer saya?,tanya_estimasi_waktu,synthetic
+Berapa biayanya ya bang,nego_harga,real
+"sudah seminggu lebih, laptop aku masih aja belum selesai",komplain,synthetic
+Di leptop tu,sapaan,real
+"batal servis komputer, besok aja",batal,synthetic
+Malam bang.. Hardisk yang ekternalnya kok gak bisa kebaca ya dari kemarin ya.,konsultasi_kerusakan,real
+"Admin, saya ingin tahu tentang cara servis komputer sendiri",butuh_admin,synthetic
+Kira Kira minggu udh bisa di ambil engak bang?,tanya_status,real
+sudah bisa,setuju,real
+yauda ganti dlu aja bg,setuju,real
+iya santai jak kak,sapaan,real
+Berapa semuanya ongkosnya bang,tanya_estimasi_waktu,real
+Jadi gimana,umum_teknis,real
+"Kapan selesai perbaikan laptopnya, bro?",tanya_status,synthetic
+Saya ingin tahu cara klaim garansi laptop di tempat servis ini,klaim_garansi,synthetic
+"bang, saya mau batal servis",batal,synthetic
+yg hitam tu bagian kanan nd bs kah bang,konsultasi_kerusakan,real
+Brp ye bang DP ny?,info_toko,real
+"laptopnya udah gak bermasalah, jadi gak jadi servis",batal,synthetic
+Butuh bantuan dari admin untuk mengatasi virus komputer,butuh_admin,synthetic
+Butuh saran dari admin tentang memilih antivirus,butuh_admin,synthetic
+ok bng saya otw skrg,sapaan,real
+besok yaa bang,sapaan,real
+"Komputer saya tidak bisa terhubung ke wifi, apa yang harus saya lakukan?",konsultasi_kerusakan,synthetic
+"Bang, laptopnya udah jadi belum?",tanya_status,synthetic
+Saya setuju dengan harga dan waktu yang sudah dibicarakan,setuju,synthetic
+"bg, servisnya kok lama banget sih",komplain,synthetic
+"Mau servis komputer, tapi budget saya terbatas, bisa bantu?",nego_harga,synthetic
+"Jam berapa toko servicenya tutup, bro?",info_toko,synthetic
+Ndk bng soalnye ndk ngerti lepaskan e gmne,konsultasi_kerusakan,real
+"Bang, apa bedanya antara servis biasa dan servis express, soalnya harganya beda jauh?",nego_harga,synthetic
+"Bang, servisnya udah selesai blm?",tanya_estimasi_waktu,synthetic
+Ok malam mngkn sy ksna ambil,setuju,real
+"batal servis, mohon dikembalikan uangnya",batal,synthetic
+"Toko servicenya, apa bisa dihubungi lewat WhatsApp, bang?",info_toko,synthetic
+"laptopnya udah gak ada masalah, batal servis",batal,synthetic
+Die kire saye yg nyuruh,sapaan,real
+"maaf bang br lihat, kalo ganti hard disk aja gimana bang",konsultasi_kerusakan,real
+komplain tentang hasil servis yang tidak memuaskan,komplain,synthetic
+"batal dulu ya, nanti aku kabarin lagi",batal,synthetic
+Oke kk,sapaan,real
+Klo gtu gmne la bg,sapaan,real
+Oh iyalah jam 3 saya ambil..,tanya_status,real
+"Mau servis laptop, tapi kayaknya harganya agak mahal, bisa nego?",nego_harga,synthetic
+"Saya mau klaim garansi laptop saya yang rusak, tolong bantu",klaim_garansi,synthetic
+"Setuju bang, besok saya bawa laptopnya ke servis",setuju,synthetic
+Udah selesai belum servis komputer saya?,tanya_estimasi_waktu,synthetic
+Oke bg nanti laptop ny saya ambil ke toko,setuju,real
+"Kapan selesai servis laptopnya, bang?",tanya_status,synthetic
+"laptopnya udah gak bermasalah, batal",batal,synthetic
+Berapa ya biaya untuk servis hardisk yang rusak?,nego_harga,synthetic
+"biaya servis laptop aku kelewat batas, bg",komplain,synthetic
+okey bg bntr lagi otw,setuju,real
+"Apa toko servicenya menyediakan spare part, bro?",info_toko,synthetic
+【AUDIO】,umum_teknis,real
+Cmn die blg ndk bse,komplain,real
+oke gas bg,sapaan,real
+Bang sya sdh jln ksna,sapaan,real
+"Saya ingin upgrade RAM komputer, apa yang harus saya lakukan?",umum_teknis,synthetic
+Sian harapan ke dah ratinye selaing ganti masen,sapaan,real
+"Bang, saya mau klaim garansi, tapi saya tidak punya waktu",klaim_garansi,synthetic
+Udah selesai belum servis laptop saya?,tanya_estimasi_waktu,synthetic
+"Bang, untuk leptop nya bagaimana yaa?",konsultasi_kerusakan,real
+komplain tentang pelayanan yang tidak baik,komplain,synthetic
+"Waduh saya lagi diluar ni bang, tokonya buka sampai jam berapa bang?",info_toko,real
+boleh katanya bg,sapaan,real
+Balom sampat,sapaan,real
+Butuh admin yang bisa membantu saya secara gratis,butuh_admin,synthetic
+"Saya ingin tahu cara memperbaiki layar yang retak, bang",umum_teknis,synthetic
+Laptopnya masih dalam proses atau udah selesai?,tanya_status,synthetic
+"gak jadi servis, udah ada yang benerin",batal,synthetic
+"bg, udah berapa lama aku nitip laptop, kok belum jadi",komplain,synthetic
+"Saya ingin memperbaiki komputer saya yang rusak, bisa diperbaiki di sini?",konsultasi_kerusakan,synthetic
+"Saya punya komputer yang tidak bisa menyala, bisa dibantu gak?",konsultasi_kerusakan,synthetic
+Saya mau tanya tentang biaya klaim garansi laptop,klaim_garansi,synthetic
+"laptopnya mau dipake, batal servis",batal,synthetic
+bang gajadi servis ya uangnya belum ada,batal,synthetic
+"gak jadi servis komputer, mohon dikembalikan uangnya",batal,synthetic
+"servisnya tidak memuaskan, laptop aku masih rusak",komplain,synthetic
+Kapan saya bisa ambil komputer yang selesai diservis?,tanya_estimasi_waktu,synthetic
+Apakah ada potongan harga untuk pelanggan lama?,nego_harga,synthetic
+"Saya ingin upgrade prosesor komputer, apa yang harus saya lakukan?",umum_teknis,synthetic
+Berapa lama waktu yang dibutuhkan untuk servis laptop?,tanya_estimasi_waktu,synthetic
+pelayanan di tempat servis komputer kurang memuaskan,komplain,synthetic
+"Bro, admin online ga sih sekarang?",butuh_admin,synthetic
+"Saya cari tempat servis komputer yang murah, bisa bantu?",nego_harga,synthetic
+"Oke deh, saya setuju dengan harga yang ditawarkan",setuju,synthetic
+kl tinggal 27 itu pemakaian masih brp lama bang,tanya_estimasi_waktu,real
+klo cas laptop acer berapa,info_toko,real
+"servis komputer batal, mohon maaf",batal,synthetic
+"Udah beres belum, bang, servicenya?",tanya_status,synthetic
+Baiklah kak,sapaan,real
+laptop aku jadi tidak bisa digunakan setelah diservis,komplain,synthetic
+"Bang, kalau servis laptop, bisa menggunakan spare part dari luar nggak?",nego_harga,synthetic
+maksud saya minta instal kan ke windows pas laptop saya sebelum di install,konsultasi_kerusakan,real
+Berapa biayanya bang?,nego_harga,real
+Laptopnya masih dalam proses servicenya?,tanya_status,synthetic
+Besok buka bg ??,info_toko,real
+Kapan saya bisa ambil komputer yang diservis?,tanya_estimasi_waktu,synthetic
+"Saya ingin tahu cara memperbaiki keyboard yang rusak, bang",umum_teknis,synthetic
+dengan layar nye juga ye bg,konsultasi_kerusakan,real
+"Toko servicenya punya layanan servis di tempat, kan?",info_toko,synthetic
+kalau boleh tau buka dri jam brp bg?,info_toko,real
+"Oke, saya setuju dengan penawaran servis lengkap",setuju,synthetic
+tahan jak lok bang,sapaan,real
+"Bang, kalau servis CPU, apakah bisa menggunakan jasa disini?",nego_harga,synthetic
+"Komputer saya tiba-tiba mati sendiri, apa penyebabnya bro?",konsultasi_kerusakan,synthetic
+"Admin, saya ingin tahu tentang jenis servis yang ada",butuh_admin,synthetic
+jujur saya bru pertama kli kenak gini bg😭,umum_teknis,real
+"Saya punya laptop yang rusak, bisa klaim garansi di tempat servis ini?",klaim_garansi,synthetic
+"Laptop saya tidak bisa nyala, apa penyebabnya?",umum_teknis,synthetic
+Nda ade saye ape2 kan padahal,umum_teknis,real
+"Saya beli laptop di sini beberapa minggu lalu, sekarang rusak",klaim_garansi,synthetic
+"Harganya bisa ditekan lagi nggak, bang?",nego_harga,synthetic
+"gak jadi servis, mohon dikembalikan uangnya",batal,synthetic
+"bg, ttup?",sapaan,real
+"Laptopnya masih garansi, bisa diperbaiki gratis?",klaim_garansi,synthetic
+Tokonya jam berapa tutup ya mba,info_toko,real
+Udah selesai belum servisnya?,tanya_status,synthetic
+"Bang, kalau servis komputer di sini, apakah bisa menggunakan spare part dari luar?",nego_harga,synthetic
+ad bang makasih ya,sapaan,real
+"Laptopnya masih garansi, tapi saya tidak tahu cara klaim",klaim_garansi,synthetic
+"Saya ingin tahu cara memperbaiki mouse yang rusak, bang",umum_teknis,synthetic
+Kapan bisa di ambil?,tanya_status,real
+komplain tentang kerusakan tambahan setelah servis,komplain,synthetic
+"Saya ingin instal ulang Windows, bisa dibantu tidak?",umum_teknis,synthetic
+"Laptopnya masih dalam masa garansi, bisa diperbaiki?",klaim_garansi,synthetic
+"servis komputer batal, nanti aku kabarin lagi",batal,synthetic
+Jadi untuk perbaikannya apa2 saja ya Bg?,konsultasi_kerusakan,real
+Butuh admin yang bisa membantu saya sekarang,butuh_admin,synthetic
+touchscreen sm keyboard brarti ya,umum_teknis,real
+Kira-kira berapa hari servis laptop saya?,tanya_estimasi_waktu,synthetic
+okee lanjutkan service nya bang kalau udah selesai konfirmasi yaa,setuju,real
+Kapan saya bisa ambil laptop yang udah diservis?,tanya_estimasi_waktu,synthetic
+"Klo untuk cas kadang masuk kadang enggak itu gimana Bang, dr Laptopnya atau casannya yg rusak?",konsultasi_kerusakan,real
+"Saya ingin tahu cara memperbaiki printer yang rusak, bang",umum_teknis,synthetic
+Jdi udh bisa di ambil ya? Total berapa jadinya kk?,tanya_status,real
+Iya,setuju,real
+Masalah lain gak ada bang?,sapaan,real
+"kira kira kalo saya mau jual macbook pro 2017 touchbar 15"", dapat di berapa ya?",nego_harga,real
+"Laptopnya masih garansi, tapi saya tidak tahu cara klaim",klaim_garansi,synthetic
+"batal servis, udah ada yang benerin",batal,synthetic
+"Kalau saya bawa komputer sendiri, apakah harganya lebih murah?",nego_harga,synthetic
+Malam ini bisa ya?,tanya_estimasi_waktu,real
+"Bang, saya mau klaim garansi laptop saya yang rusak",klaim_garansi,synthetic
+Kapan selesainya servis komputer saya?,tanya_estimasi_waktu,synthetic
+"Oke, besok pagi saya ambil",setuju,real
+Komplain tentang lambatnya proses servis,komplain,synthetic
+Servisnya butuh berapa lama sih?,tanya_estimasi_waktu,synthetic
+besok saya ambil ya bang,tanya_status,real
+Butuh bantuan dari admin untuk mengatasi kesalahan komputer,butuh_admin,synthetic
+"laptop aku masih rusak, padahal udah diservis",komplain,synthetic
+"Toko servicenya menerima servis laptop, kan?",info_toko,synthetic
+"Saya mau klaim garansi laptop saya yang rusak, tolong bantu",klaim_garansi,synthetic
+"Kalau saya servis komputer di sini, apakah bisa dapat garansi?",nego_harga,synthetic
+"bg, laptop aku jadi bermasalah setelah diservis",komplain,synthetic
+Ada mines nya gak bang,sapaan,real
+Waalaikumsalam,sapaan,real
+iya kak,setuju,real
+Butuh bantuan dari admin untuk mengatasi masalah komputer,butuh_admin,synthetic
+Makanya saya tidak ganti kak,konsultasi_kerusakan,real
+"Admin, saya mau tanya tentang waktu servis",butuh_admin,synthetic
+Nanti kalau sudah selesai kasi tau ya kak,tanya_status,real
+Udah berapa lama sih servis laptop saya?,tanya_estimasi_waktu,synthetic
+"Bang, saya mau tanya tentang prosedur klaim garansi",klaim_garansi,synthetic
+"bang, saya batal servis komputernya",batal,synthetic
+Berapa lama waktu servis komputer saya?,tanya_estimasi_waktu,synthetic
+Kemaren bagus tu bng.,sapaan,real
+"Komputer saya mengalami masalah dengan suara, apa penyebabnya?",umum_teknis,synthetic
+Makasih bg🙏🏻,sapaan,real
+Yang penting word ny nda bermasalah lg,setuju,real
+"waalaikumsalam bang, besok ya",sapaan,real
+kenak harga brp bang kalo ganti frame depan belakang,nego_harga,real
+"Kalau servis komputer di sini, apakah ada garansi atau tidak?",nego_harga,synthetic
+"Laptopnya rusak karena kesalahan pabrik, bisa klaim garansi?",klaim_garansi,synthetic
+"Saya ingin konsultasi tentang cara memperbaiki komputer saya yang rusak, bisa ya?",konsultasi_kerusakan,synthetic
+Udh ya bg,sapaan,real
