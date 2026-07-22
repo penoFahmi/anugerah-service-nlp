@@ -60,7 +60,7 @@ async def predict_intent(request: IntentRequest):
     cleaned_text = clean_text(original_text)
     
     if not cleaned_text:
-        return {"intent": "umum_teknis", "confidence": 0.0, "original_text": original_text}
+        return {"intent": "lainnya", "confidence": 0.0, "original_text": original_text}
         
     # Ekstrak Vektor
     vector = get_sentence_vector(cleaned_text, ft_model)
