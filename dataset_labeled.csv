@@ -36,7 +36,7 @@ Besok bararti bisa udah saya ambil bang?,batal,real,besok bararti bisa udah saya
 "Oke bg terimakasih
 Nnti saya ambl laptop nya",setuju,real,"oke bg terimakasih
 nnti saya ambl laptop nya"
-maaf bg batal aja,batal,synthetic,maaf bg batal aja
+"nanti aja, batal aja",batal,synthetic,nanti aja batal aja
 Oh oke boleh bg,setuju,real,oh oke boleh bg
 "Waalaikumsalam, baik Bang, terimakasih Bang",lainnya,real,waalaikumsalam baik bang terimakasih bang
 "ooh oke"" kak perbaiki saja ya disitu nanti kl udh selesai kabarin",setuju,real,ooh oke kak perbaiki saja ya disitu nanti kl udh selesai kabarin
@@ -87,7 +87,7 @@ Iya kak lanjutkan 🙏🏻,setuju,real,iya kak lanjutkan
 dimana lah tu ye bang,lainnya,real,dimana lah tu ye bang
 laptop maksud saye,lainnya,real,laptop maksud saye
 Pagi bg,lainnya,real,pagi bg
-Berikut beberapa contoh kalimat obrolan WhatsApp pelanggan ke tempat servis komputer untuk kategori 'batal':,batal,synthetic,berikut beberapa contoh kalimat obrolan whatsapp pelanggan ke tempat servis komputer untuk kategori batal
+batal,batal,synthetic,batal
 oke baik bg,setuju,real,oke baik bg
 Tadi gak keburu jdi krja dulu,batal,real,tadi gak keburu jdi krja dulu
 keyboard ny masih nd bise ke bang,lainnya,real,keyboard ny masih nd bise ke bang
@@ -128,7 +128,7 @@ Bang bisa minta bukti pembayaran Ndak orang rumah mau Liat tkut sye dibilang boh
 "selamat malam juga bang, tadi saya udah kasih tau orang tua untuk biayanya. Kata bapak mama saya servicenya ditunda dulu jadi besok siang saya ambil laptopnya di toko",batal,real,selamat malam juga bang tadi saya udah kasih tau orang tua untuk biayanya kata bapak mama saya servicenya ditunda dulu jadi besok siang saya ambil laptopnya di toko
 Okok siap bg,setuju,real,okok siap bg
 bg bisa qris/tf nd?,lainnya,real,bg bisa qristf nd
-"laptopnya mau dipake, cancel aja",batal,synthetic,laptopnya mau dipake cancel aja
+"mau pake laptopnya, cancel aja",batal,synthetic,mau pake laptopnya cancel aja
 "Bang, untuk leptop nya bagaimana yaa?",lainnya,real,bang untuk leptop nya bagaimana yaa
 "🔄 *Pesan pengingat agar nomormu aman*
 
@@ -211,7 +211,7 @@ tolong sampe bisa nyaman aman sentosa yaa kak🙏🏻,lainnya,real,tolong sampe 
 Nanti kalau sudah selesai kasi tau ya kak,lainnya,real,nanti kalau sudah selesai kasi tau ya kak
 siang kak jadi gmn kak laptopnya?,lainnya,real,siang kak jadi gmn kak laptopnya
 Kemaren bagus tu bng.,lainnya,real,kemaren bagus tu bng
-nanti bisa servis lain kali ya,batal,synthetic,nanti bisa servis lain kali ya
+"gajadi, pembelian laptopnya belum siap",batal,synthetic,gajadi pembelian laptopnya belum siap
 Makasih bg🙏🏻,lainnya,real,makasih bg
 Yang penting word ny nda bermasalah lg,lainnya,real,yang penting word ny nda bermasalah lg
 "waalaikumsalam bang, besok ya",lainnya,real,waalaikumsalam bang besok ya
