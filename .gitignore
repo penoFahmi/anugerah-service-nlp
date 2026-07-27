@@ -20,8 +20,6 @@ build/
 data/
 corpus/
 models/
-*.bin
-*.pkl
 *.h5
 *.onnx
 *.pt
