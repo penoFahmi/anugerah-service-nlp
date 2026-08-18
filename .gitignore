@@ -20,6 +20,7 @@ build/
 data/
 corpus/
 models/
+sampah/
 *.h5
 *.onnx
 *.pt
